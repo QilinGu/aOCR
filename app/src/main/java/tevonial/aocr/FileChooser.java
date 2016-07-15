@@ -1,13 +1,8 @@
-package tevonial.digitocr;
+package tevonial.aocr;
 
 import android.app.Activity;
 import android.app.Dialog;
-import android.content.Context;
-import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
 import android.os.Environment;
 import android.util.Log;
 import android.view.Gravity;

@@ -1,4 +1,4 @@
-package tevonial.digitocr;
+package tevonial.aocr;
 
 import android.app.Activity;
 import android.graphics.Bitmap;
@@ -10,7 +10,6 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 
 /**

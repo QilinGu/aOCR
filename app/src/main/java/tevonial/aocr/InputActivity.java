@@ -1,4 +1,4 @@
-package tevonial.digitocr;
+package tevonial.aocr;
 
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
