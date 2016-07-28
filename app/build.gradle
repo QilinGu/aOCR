@@ -26,6 +26,5 @@ dependencies {
     compile 'com.android.support:appcompat-v7:24.0.0'
     compile 'com.android.support:design:24.0.0'
     compile 'com.esotericsoftware:kryo:4.0.0'
-    compile files('libs/NeuralNet.jar')
 }
 

@@ -26,12 +26,19 @@ import android.widget.TextView;
 
 import com.esotericsoftware.kryo.Kryo;
 import com.esotericsoftware.kryo.io.Input;
+import com.esotericsoftware.minlog.Log;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.io.ObjectInputStream;
 import java.util.ArrayList;
+import java.util.List;
 
+import tevonial.neural.ConvolutionalLayer;
+import tevonial.neural.FeatureMap;
+import tevonial.neural.FullLayer;
 import tevonial.neural.Layer;
 import tevonial.neural.Network;
 import tevonial.neural.Neuron;
@@ -41,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
     private ListView list;
     private ResultAdapter resultAdapter;
     private Network net;
+    private Kryo kryo = new Kryo();
 
 
     @Override
@@ -57,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if (net == null) {
+            kryo.setRegistrationRequired(false);
             new NetworkLoader().execute();
         }
 
@@ -183,12 +192,6 @@ public class MainActivity extends AppCompatActivity {
             }
 
             try {
-                Kryo kryo = new Kryo();
-
-                kryo.register(Network.class, 0);
-                kryo.register(Layer.class, 1);
-                kryo.register(Neuron.class, 2);
-
                 Input input = new Input(fis);
                 temp = (Network) kryo.readClassAndObject(input);
                 input.close();
